@@ -1,0 +1,32 @@
+Ini buat user login, regis, dan forgot password
+
+Udh ku sortir backend sama frontendnya, jadi kalau mau styling otak-atik file2 yang di frontend aja, backend itu semua proses gaada yang ditunjukin.
+
+Kalau mau dipake buat lecture ada beberapa yang harus diubah:
+1. db.php
+	ganti nama databasenya sesuai nama database yang kalian pake yahhh
+
+2. Query SQL semua file
+	Di semua file untuk query sqlnya ku pake tablenya namanya user, kalau kalian nama tablenya beda di database kalian, make sure untuk ganti nama tablenya yang sesuai di semua file (terutama file process). Tentu saja begitupula dengan nama atributnya tolong disesuaikan yah
+
+3. backend/register_process.php
+	tambahin 
+	$role = 'role yang seharusnya'
+	lalu di $sql bagian
+		INSERT INTO tambahin role
+		VALUES tambahin ? (question mark 1 lagi)
+	lalu di $result->execute tambahin $role
+	taulah yah bisa sendiri
+
+4. backend/login_process.php
+	di akhir yang banyak $_SESSIONnya tambahin
+	$_SESSION['role'] = $row['role']
+
+5. database
+	table user kasih atribut role juga
+
+
+nomor 3-5 karena di lecture ada 1 atribut lagi namanya role yang buat admin sama participant
+
+dah kyknya itu aja, :)
+
