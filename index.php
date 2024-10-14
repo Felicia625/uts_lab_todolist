@@ -33,14 +33,17 @@
             <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
                 <div class="card my-2 mx-auto">
                     <div class="card-body">
-                        <h5 class="card-title"><?= $row['title'];?></h5>
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title"><?= $row['title'];?></h5>
+                            <div>#<?= $row['category'];?></div>
+                        </div>
                         <div class="card-text">Due:
                             <?php
                             if($row['deadline'] != NULL){
-                                if((date("now") < date($row['deadline']) && $row['status'] == 'Not Done') || ($row['status'] == 'Done Late')){
+                                if((time() >  strtotime($row['deadline']) && $row['status'] == 'Not Done') || ($row['status'] == 'Done Late')){
                                     echo "<span style='color: red;'>". date("d-M-Y H:ia",strtotime($row['deadline'])). "</span>";
                                 } else {
-                                    echo date("d-M-Y h:i", strtotime($row['deadline']));
+                                    echo date("d-M-Y H:ia", strtotime($row['deadline']));
                                 }
                             }else{
                                 echo "No deadline";
@@ -48,8 +51,14 @@
                             ?>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <div class="card-text">Status: <?= $row['status'];?></div>
-                            <div><a href="todolist/frontend/view.php" class="btn btn-primary">View</a></div>
+                            <div class="card-text"
+                                <?php
+                                    if($row['status'] == 'Done') echo "style='color: green;'";
+                                    else if((time() >  strtotime($row['deadline']) && $row['status'] == 'Not Done') || ($row['status'] == 'Done Late')) echo "style='color: red;'";
+                                ?>
+                            ><?= $row['status'];?>
+                            </div>
+                            <div><a href="todolist/frontend/view.php?id=<?= $row['listid'];?>" class="btn btn-primary">View</a></div>
                         </div>
                     </div>
                 </div>
