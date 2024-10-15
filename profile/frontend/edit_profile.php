@@ -17,6 +17,33 @@ $birthday = $_SESSION['birthday'];
 </head>
 <body>
     <div class="container">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.php">To Do List</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../todolist/frontendcreate.php">Create Task</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="user_profile.php">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../user/backend/logout_process.php">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <h1 class="text-center mt-3">Edit Profile</h1>
         <?php
             if(isset($_GET['error'])){
