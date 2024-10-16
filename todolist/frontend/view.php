@@ -72,7 +72,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
             <div
                 <?php
                     if($row['status'] == 'Done') echo "style='color: green;'";
-                    else if((time() >  strtotime($row['deadline']) && $row['status'] == 'Not Done') || ($row['status'] == 'Done Late')) echo "style='color: red;'";
+                    else if(($row['deadline'] != NULL && time() >  strtotime($row['deadline']) && $row['status'] == 'Not Done') || ($row['status'] == 'Done Late')) echo "style='color: red;'";
                 ?>
                 ><?= $row['status'];?>
             </div>

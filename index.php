@@ -152,7 +152,7 @@
                         <div class="d-flex justify-content-between">
                             <div class="card-text" <?php
                                 if ($row['status'] == 'Done') echo "style='color: green;'";
-                                else if ((time() > strtotime($row['deadline']) && $row['status'] == 'Not Done') || ($row['status'] == 'Done Late')) echo "style='color: red;'";
+                                else if (($row['deadline'] != NULL && time() > strtotime($row['deadline']) && $row['status'] == 'Not Done') || ($row['status'] == 'Done Late')) echo "style='color: red;'";
                             ?>><?= $row['status']; ?>
                             </div>
                             <div><a href="todolist/frontend/view.php?id=<?= $row['listid']; ?>" class="btn btn-primary">View</a></div>
