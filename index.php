@@ -72,7 +72,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">To Do List</a>
+                <a class="navbar-brand" href='index.php'>To Do List</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -105,8 +105,8 @@
             <div class="my-3">
                 <form id="filterForm" method="GET" action="">
                     <div class="mb-3">
-                        <label for="filter">Filter: </label>
-                        <select name="filter" id="filter" class="form-select d-inline-block w-auto" onchange="submitFilterForm()">
+                        <label for="filter" class="me-3">Filter:    </label>
+                        <select name="filter" id="filter" class="form-select d-inline-block" style="max-width: 210px;" onchange="submitFilterForm()">
                             <option value="all" <?= $filter == 'all' ? 'selected' : ''; ?>>All Tasks</option>
                             <option value="completed" <?= $filter == 'completed' ? 'selected' : ''; ?>>Completed Tasks</option>
                             <option value="incomplete" <?= $filter == 'incomplete' ? 'selected' : ''; ?>>Incomplete Tasks</option>
@@ -119,9 +119,9 @@
                     </div>
 
                     <!-- Search Bar -->
-                    <div class="text-center">
-                        <label for="search" class="ms-3">Search:</label>
-                        <input type="text" name="search" id="search" value="<?= htmlentities($search); ?>" class="form-control d-inline-block w-auto" placeholder="Search by title">
+                    <div>
+                        <label for="search" class="me-1">Search:</label>
+                        <input type="text" name="search" id="search" value="<?= htmlentities($search); ?>" class="form-control d-inline-block" style="max-width: 210px" placeholder="Search by title">
                         <button type="submit" class="btn btn-light">Search</button>
                     </div>
                 </form>

@@ -30,7 +30,6 @@ CREATE TABLE `list` (
   `userid` int(11) NOT NULL,
   `deadline` datetime DEFAULT NULL,
   `status` varchar(20) NOT NULL,
-  `done` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`listid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +40,7 @@ CREATE TABLE `list` (
 
 LOCK TABLES `list` WRITE;
 /*!40000 ALTER TABLE `list` DISABLE KEYS */;
-INSERT INTO `list` VALUES (1,'Project',NULL,'Work',3,'2024-10-12 22:29:27','Done Late',NULL),(6,'miawmiawmiaw','aaa','Personal',1,NULL,'Not Done',NULL),(7,'Makan','Makan yang sehat biar kuat','Personal',3,NULL,'Done',NULL);
+INSERT INTO `list` VALUES (1,'Project',NULL,'Work',3,'2024-10-12 22:29:27','Done Late'),(6,'miawmiawmiaw','aaa','Personal',1,NULL,'Not Done'),(7,'Makan','Makan yang sehat biar kuat','Personal',3,NULL,'Done');
 /*!40000 ALTER TABLE `list` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-14 20:16:44
+-- Dump completed on 2024-10-19 20:09:51
