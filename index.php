@@ -138,6 +138,7 @@
                         </div>
                         <div class="card-text">Due:
                             <?php
+                            date_default_timezone_set('Asia/Jakarta');
                             if ($row['deadline'] != NULL) {
                                 if ((time() > strtotime($row['deadline']) && $row['status'] == 'Not Done') || ($row['status'] == 'Done Late')) {
                                     echo "<span style='color: red;'>" . date("d-M-Y H:ia", strtotime($row['deadline'])) . "</span>";
