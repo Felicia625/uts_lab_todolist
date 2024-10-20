@@ -9,6 +9,7 @@ $stmt = $db->prepare($sql);
 $stmt->execute([$id]);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+date_default_timezone_set('Asia/Jakarta');
 
 if($process == 'undone'){
     $status = 'Not Done';

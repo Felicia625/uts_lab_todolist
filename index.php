@@ -129,6 +129,9 @@
 
             <!-- Display Task List -->
             <div>
+            <?php if(empty($result)) { ?>
+                <div class="alert alert-info text-center" role="alert">You don't have any tasks.</div>
+            <?php } else { ?>
             <?php foreach ($result as $row) { ?>
                 <div class="card my-2 mx-auto">
                     <div class="card-body">
@@ -160,9 +163,9 @@
                         </div>
                     </div>
                 </div>
-            <?php } ?>
+            <?php }} ?>
             </div>
-        <?php } ?>
+        <?php }?>
         </div>
     </div>
 
