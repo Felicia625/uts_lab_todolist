@@ -1,6 +1,6 @@
-Ini buat user login, regis, dan forgot password
+Ini yang di folder profile sama user bisa dipake
 
-Udh ku sortir backend sama frontendnya, jadi kalau mau styling otak-atik file2 yang di frontend aja, backend itu semua proses gaada yang ditunjukin.
+Udh ku sortir backend sama frontendnya, jadi kalau mau styling otak-atik file2 yang di frontend aja. Backend itu semua proses, gaada yang ditampilin.
 
 Kalau mau dipake buat lecture ada beberapa yang harus diubah:
 1. db.php
@@ -24,6 +24,9 @@ Kalau mau dipake buat lecture ada beberapa yang harus diubah:
 
 5. database
 	table user kasih atribut role juga
+
+6. folder profile frontend
+	tambahin rolenya juga
 
 
 nomor 3-5 karena di lecture ada 1 atribut lagi namanya role yang buat admin sama participant
