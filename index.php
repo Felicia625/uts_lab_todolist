@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script>
         function submitFilterForm() {
@@ -34,7 +35,6 @@
 
                 $sql = "SELECT * FROM list WHERE userid = :userid";
 
-                // Modify the query based on the filter
                 if($filter == 'completed'){
                     $sql .= " AND (status = 'Done' OR status = 'Done Late')";
                 } else if($filter == 'incomplete'){
@@ -106,7 +106,7 @@
                 <form id="filterForm" method="GET" action="">
                     <div class="mb-3">
                         <label for="filter" class="me-3">Filter:    </label>
-                        <select name="filter" id="filter" class="form-select d-inline-block" style="max-width: 210px;" onchange="submitFilterForm()">
+                        <select name="filter" id="filter" class="form-select d-inline-block" style="max-width: 100%;" onchange="submitFilterForm()">
                             <option value="all" <?= $filter == 'all' ? 'selected' : ''; ?>>All Tasks</option>
                             <option value="completed" <?= $filter == 'completed' ? 'selected' : ''; ?>>Completed Tasks</option>
                             <option value="incomplete" <?= $filter == 'incomplete' ? 'selected' : ''; ?>>Incomplete Tasks</option>
@@ -121,8 +121,10 @@
                     <!-- Search Bar -->
                     <div>
                         <label for="search" class="me-1">Search:</label>
-                        <input type="text" name="search" id="search" value="<?= htmlentities($search); ?>" class="form-control d-inline-block" style="max-width: 210px" placeholder="Search by title">
-                        <button type="submit" class="btn btn-light">Search</button>
+                        <div class="input-group">
+                            <input type="text" name="search" id="search" value="<?= htmlentities($search); ?>" class="form-control" placeholder="Search by title">
+                            <button type="submit" class="btn btn-light">Search</button>
+                        </div>
                     </div>
                 </form>
             </div>

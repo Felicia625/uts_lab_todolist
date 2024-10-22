@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Info Validation</title>
+    <title>User Info Verification</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center mt-3">User Info Validation</h1>
+        <h1 class="text-center mt-3">User Info Verification</h1>
         <?php
             if(isset($_GET['error'])){
                 if($_GET['error'] == 'email'){
